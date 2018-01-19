@@ -6,8 +6,14 @@
     
     <body>
         <h1>Book Finder</h1>
-        <h2><%= genre %></h2>
-        <p>HELLOOOOOOOOOOOOOOOOOO, you chose the genre <%= genre %></p>
-        <input type="text" placeholder="Enter a book genre"/>
+        <form>
+            <input type="text" placeholder="Enter a book genre"/>
+            <input type="button" name="submit" value="submit"/>
+        </form>
+        
+        <p>HELLOOOOOOOOOOOOOOOOOO, you chose the <%= genre%> genre, here are some books for you:</p>
+        <% for( i = 0; i < bookstore.length; i++) { %>
+        <p><%= bookstore[i]%></p> 
+        <% } %>
     </body>
 </html>
