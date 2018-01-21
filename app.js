@@ -54,7 +54,7 @@ var data = {
 
      {
     book: {
-        title: "The Lors of the Rings",
+        title: "The Lord of the Rings",
         genre: "fantasy"
     }},
 
