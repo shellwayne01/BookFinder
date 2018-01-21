@@ -12,8 +12,9 @@
         </form>
         
         <p>HELLOOOOOOOOOOOOOOOOOO, you chose the <%= genre%> genre, here are some books for you:</p>
-        <% for( i = 0; i < bookstore.length; i++) { %>
-        <p><%= bookstore[i]%></p> 
+        <% for( i = 0; i < matchedBooks.length; i++) { %>
+        <p><%= (matchedBooks[i]).title; %></p> 
+        <img src= <%=matchedBooks[i].cover; %> height="300" width="200">
         <% } %>
     </body>
 </html>
