@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Book Finder</title>
+    </head>
+    
+    <body>
+        <h1>Book Finder</h1>
+        <form>
+            <input type="text" placeholder="Enter a book genre"/>
+            <input type="button" name="submit" value="submit"/>
+        </form>
+        
+        <p>HELLO, you chose the <strong> <%= genre%> </strong> genre, here are some books for you:</p>
+        <% for( i = 0; i < bookstore.length; i++) { %>
+           <% if (bookstore[i].book.genre == genre) { %>
+                <p><%= bookstore[i].book.title %></p> 
+                <% } %>
+        <% } %>
+    </body>
+</html>
