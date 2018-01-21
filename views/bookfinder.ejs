@@ -13,7 +13,7 @@
         
         <p>HELLO, you chose the <strong> <%= genre%> </strong> genre, here are some books for you:</p>
         <% for( i = 0; i < matchedBooks.length; i++) { %>
-        <h2><%= (matchedBooks[i]).title; %></h2> 
+        <p><%= (matchedBooks[i]).title; %></p> 
         <img src= <%=matchedBooks[i].cover; %> height="300" width="200">
         <% } %>
     </body>
