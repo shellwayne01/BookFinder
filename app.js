@@ -26,10 +26,55 @@ var data = {
     book: {
         title: "Pride and Prejudice",
         genre: "romance"
-    }} 
+    }},
+
+     {
+    book: {
+        title: "Romeo and Juliet",
+        genre: "romance"
+    }},
+
+     {
+    book: {
+        title: "Doctor Sleep",
+        genre: "horror"
+    }},
+
+     {
+    book: {
+        title: "The Da Vinci Code",
+        genre: "mystery"
+    }} ,
+
+     {
+    book: {
+        title: "Doctor Sleep",
+        genre: "horror"
+    }} ,
+
+     {
+    book: {
+        title: "The Lors of the Rings",
+        genre: "fantasy"
+    }},
+
+     {
+    book: {
+        title: "American Psyco",
+        genre: "horror"
+    }},
+
+     {
+    book: {
+        title: "All the Beautiful Sinners",
+        genre: "crime"
+    }}    
+  
+
     ]
       
 };
+
 
 
 app.get('/search/:genre', chooseGenre);
