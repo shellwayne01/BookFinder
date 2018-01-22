@@ -1,5 +1,5 @@
 # BookFinder
-Simple Book Finder Application using Node/Express
+Simple Book Finder Application using Node/Express and EJS
 
 ## Be sure to:
 - npm install express --save
