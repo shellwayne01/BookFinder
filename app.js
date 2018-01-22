@@ -12,7 +12,7 @@ function listening(){
     console.log("listening");
 }
 
-//var genres = [horror, "romance", "science fiction", "comedy", "biography", "non-fiction", "fiction"];
+//var genres = ["horror", "romance", "science fiction", "comedy", "biography", "non-fiction", "fiction"];
 
 var data = {
     bookstore:[
@@ -86,12 +86,25 @@ var data = {
 };
 
 
+app.get('/home', function(request, response){
+    response.render('home.ejs');
+});
+
+
+//app.get('/getBooks', generator);
+//
+//function generator(request, response){
+//    //var genre2 = request.query.userGenre;
+//    //console.log(genre2);
+//    response.redirect('/search/romance');
+//};
+
+
 app.get('/search/:genre', chooseGenre);
 
 function chooseGenre(request, response){
     var genre = request.params.genre;
-    //console.log(genre);
-    
+
     //Retrieves books of desired genre
     var bookstore = data.bookstore;
     var relevantBooks = [];
@@ -105,18 +118,11 @@ function chooseGenre(request, response){
     
     response.render('bookfinder.ejs', {genre: genre, 
                                        matchedBooks: relevantBooks });
-    //console.log(JSON.stringify(data.bookstore));
-}
+};
 
+/* Redirects to bookfinder home screen if the page requested is not found */
+app.use(function(req, res, next){
+    console.log("url not found: redirected to home");
+    res.redirect('/home');
+})
 
-
-
-
-
-
-//app.get('/search/:genre', function(req, res){
-//    var genre = request.params.genre;
-//    console.log(genre);
-//    res.render('bookfinder.ejs', {genre: genre});
-//    })
-// 
