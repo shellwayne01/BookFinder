@@ -3,7 +3,9 @@ var app = express();
 var fs = require('fs');
 
 console.log("sever is starting");
-app.use(express.static('views')); 
+app.use(express.static('/views')); 
+app.use('/assets',express.static('assets')); 
+
 
 
 var server = app.listen(8080, listening);

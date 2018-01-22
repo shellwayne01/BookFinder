@@ -2,19 +2,27 @@
 <html>
     <head>
         <title>Book Finder</title>
+        <link href="/assets/style.css" rel="stylesheet" type="text/css">
+        
+        <link href="https://fonts.googleapis.com/css?family=Katibeh" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+        
     </head>
     
     <body>
+        
+        <div class="bg_img"></div>
+        
         <h1>Book Finder</h1>
         <form>
-            <input type="text" placeholder="Enter a book genre"/>
-            <input type="button" name="submit" value="submit"/>
+            <input id="text" type="text" placeholder="Enter a book genre"/>
+            <input id="btn" type="button" name="submit" value="submit"/>
         </form>
         
-        <p>HELLO, you chose the <strong> <%= genre%> </strong> genre, here are some books for you:</p>
+        <p id="one">HELLO, you chose the <strong> <%= genre%> </strong> genre, here are some books for you:</p>
         <% for( i = 0; i < matchedBooks.length; i++) { %>
-        <p><%= (matchedBooks[i]).title; %></p> 
-        <img src= <%=matchedBooks[i].cover; %> height="300" width="200">
+        <p id="two"><%= (matchedBooks[i]).title; %></p> 
+        <img id="covers" src= <%=matchedBooks[i].cover; %> height="300" width="200">
         <% } %>
     </body>
 </html>
