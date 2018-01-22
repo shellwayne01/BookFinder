@@ -2,17 +2,24 @@
 <html>
     <head>
         <title>Book Finder</title>
+        <link href="/assets/style.css" rel="stylesheet" type="text/css">
+        
+        <link href="https://fonts.googleapis.com/css?family=Katibeh" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     </head>
     
     <body>
-        <h1>Book Finder</h1>
         
-        <p>Hello reader! Enter a genre for a list of suggested books.</p>
+        <div class="bg_img"></div>
+        
+        <h1>Book Finder</h1>
         
         <form action='/getBooks' method='get'>
             <input type="text" placeholder="Enter a book genre" id="userGenre" name="userGenre"/>
             <input type="button" name="submit" value="submit"/>
         </form>
+        
+        <p>Hello reader! Enter a genre for a list of suggested books.</p>
         
     </body>
 </html>
