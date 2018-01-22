@@ -112,13 +112,31 @@ function chooseGenre(request, response){
 
 
 
-
-
-
-
 //app.get('/search/:genre', function(req, res){
 //    var genre = request.params.genre;
 //    console.log(genre);
 //    res.render('bookfinder.ejs', {genre: genre});
 //    })
 // 
+
+
+app.get('/home', function(request, response){
+    response.render('home.ejs');
+});
+
+
+//app.get('/getBooks', generator);
+//
+//function generator(request, response){
+//    //var genre2 = request.query.userGenre;
+//    //console.log(genre2);
+//    response.redirect('/search/romance');
+//};
+
+
+/* Redirects to bookfinder home screen if the page requested is not found */
+app.use(function(req, res, next){
+    console.log("url not found: redirected to home");
+    res.redirect('/home');
+})
+
