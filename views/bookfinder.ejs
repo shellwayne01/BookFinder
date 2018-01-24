@@ -14,12 +14,13 @@
         <div class="bg_img"></div>
         
         <h1>Book Finder</h1>
-        <form>
-            <input id="text" type="text" placeholder="Enter a book genre"/>
-            <input id="btn" type="button" name="submit" value="submit"/>
+        
+        <form action="/getBooks" method="post">
+        <input type="text" id="text" name="userInput"/>
+        <input type="submit" id="btn" name="btn"/>
         </form>
         
-        <p id="one">HELLO, you chose the <strong> <%= genre%> </strong> genre, here are some books for you:</p>
+        <p id="one">Awesome, you chose the <strong> <%= genre%> </strong> genre. Here are some books for you:</p>
         <% for( i = 0; i < matchedBooks.length; i++) { %>
         <p id="two"><%= (matchedBooks[i]).title; %></p> 
         <img id="covers" src= <%=matchedBooks[i].cover; %> height="300" width="200">

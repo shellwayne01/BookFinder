@@ -1,11 +1,13 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
+var bodyParser = require('body-parser')
 
 console.log("sever is starting");
 app.use(express.static('/views')); 
-app.use('/assets',express.static('assets')); 
-
+app.use('/assets',express.static('assets'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 
 var server = app.listen(8080, listening);
@@ -52,7 +54,7 @@ var data = {
     book = {
         title: "The Lord of the Rings",
         genre: "fantasy",
-        cover: "https://en.wikipedia.org/wiki/File:First_Single_Volume_Edition_of_The_Lord_of_the_Rings.gif"
+        cover: "https://images-na.ssl-images-amazon.com/images/I/51EstVXM1UL._SX331_BO1,204,203,200_.jpg"
     },
         
      book = {
@@ -88,54 +90,52 @@ var data = {
 };
 
 
-app.get('/search/:genre', chooseGenre);
+app.get('/search/:genre', chooseGenre)
 
 function chooseGenre(request, response){
+    console.log("Now on results page");
     var genre = request.params.genre;
     //console.log(genre);
     
     //Retrieves books of desired genre
     var bookstore = data.bookstore;
     var relevantBooks = [];
+    var found = false;
     
     for(i=0; i<bookstore.length; i++){ 
         if (genre == bookstore[i].genre){ //bookstore[i] is just a book
             relevantBooks.push(bookstore[i]);
+            found = true;
         }
     }
     console.log(relevantBooks);
     
+    if(found){
     response.render('bookfinder.ejs', {genre: genre, 
                                        matchedBooks: relevantBooks });
-    //console.log(JSON.stringify(data.bookstore));
+    }else{
+        response.render('home.ejs');
+    }
 }
 
 
-
-//app.get('/search/:genre', function(req, res){
-//    var genre = request.params.genre;
-//    console.log(genre);
-//    res.render('bookfinder.ejs', {genre: genre});
-//    })
-// 
-
-
 app.get('/home', function(request, response){
+    console.log("Now on home page");
     response.render('home.ejs');
-});
+})
 
-
-//app.get('/getBooks', generator);
-//
-//function generator(request, response){
-//    //var genre2 = request.query.userGenre;
-//    //console.log(genre2);
-//    response.redirect('/search/romance');
-//};
+//Redirects for new searches
+.post('/getBooks', function(request, response){
+    console.log("Now redirecting...");
+    var genre = request.body.userInput;
+    console.log(genre);
+    console.log("Button clicked with the following genre: " + genre);
+    response.redirect('/search/'+genre);
+})
 
 
 /* Redirects to bookfinder home screen if the page requested is not found */
-app.use(function(req, res, next){
+.use(function(req, res, next){
     console.log("url not found: redirected to home");
     res.redirect('/home');
 })

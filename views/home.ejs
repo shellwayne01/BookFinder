@@ -13,13 +13,13 @@
         <div class="bg_img"></div>
         
         <h1>Book Finder</h1>
-        
-        <form action='/getBooks' method='get'>
-            <input type="text" placeholder="Enter a book genre" id="userGenre" name="userGenre"/>
-            <input type="button" name="submit" value="submit"/>
+
+        <form action="/getBooks" method="post">
+        <input type="text" id="text" name="userInput"/>
+        <input type="submit" id="btn" name="btn"/>
         </form>
-        
-        <p>Hello reader! Enter a genre for a list of suggested books.</p>
+
+        <p id="one">Hello reader! Enter a genre for a list of suggested books.</p>
         
     </body>
 </html>

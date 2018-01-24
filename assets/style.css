@@ -55,8 +55,7 @@ h1 {
     
 }
 
-#btn {
-    
+#btn {   
     position: absolute;
     color: white;
     top: 37%;
@@ -65,9 +64,7 @@ h1 {
 /*    border-radius: 45%;*/
 /*    background-image: url( search-128.png);*/
 /*    background-size: cover;*/
-    background: transparent;
-    
-    
+    background-color: rosybrown;  
 }
 
 #one {
