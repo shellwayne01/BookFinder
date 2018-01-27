@@ -6,4 +6,5 @@ Simple Book Finder Application using Node/Express and EJS
 - npm install ejs
 - npm install body-parser
 
-Start app and see **localhost:8080/home** to begin.
+![alt text](https://raw.githubusercontent.com/shellwayne01/BookFinder/master/BookFinder2.png)
+![alt text](https://raw.githubusercontent.com/shellwayne01/BookFinder/master/BookFinder3.png)
