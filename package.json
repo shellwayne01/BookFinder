@@ -1,0 +1,29 @@
+{
+  "name": "bookfinder",
+  "version": "1.0.0",
+  "description": "Find books by genre",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shellwayne01/BookFinder.git"
+  },
+  "author": [
+    "Yorranshell Wattson",
+    "Melida Grullon"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shellwayne01/BookFinder/issues"
+  },
+  "homepage": "https://github.com/shellwayne01/BookFinder#readme"
+}
